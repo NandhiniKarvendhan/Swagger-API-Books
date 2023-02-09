@@ -77,6 +77,33 @@ app.post("/book", (req, res) => {
   res.send(newBook);
 });
 
+/**
+ * @swagger
+ * /books/update:
+ *   patch:
+ *     description: Updating book title
+ *     parameters:
+ *     - name: id
+ *       description: Book id
+ *       in: body
+ *       required: true
+ *       type: string
+ *     responses:
+ *       200:
+ *         description: Success
+ *
+ */
+app.patch("/books/update", (req, res) => {
+  let id = req.body.id;
+  let bookUpdate = books.find((element) => element.id === id);
+  console.log(bookUpdate);
+
+  let index = books.indexOf(bookUpdate);
+  console.log(index);
+  Object.assign(bookUpdate, req.body);
+  books[index] = bookUpdate;
+  res.send(bookUpdate);
+});
 app.listen(3000, () => {
   console.log("Running on port 3000");
 });
