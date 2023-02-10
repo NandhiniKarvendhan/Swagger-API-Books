@@ -104,6 +104,31 @@ app.patch("/books/update", (req, res) => {
   books[index] = bookUpdate;
   res.send(bookUpdate);
 });
+
+/**
+ * @swagger
+ * /books/delete:
+ *   delete:
+ *     description: deleting book with id
+ *     parameters:
+ *     - name: id
+ *       description: Book id
+ *       in: body
+ *       required: true
+ *       type: string
+ *     responses:
+ *       200:
+ *         description: Success
+ *
+ */
+app.delete("/books/delete", (req, res) => {
+  let id = req.body.id;
+  let bookUpdate = books.find((element) => element.id === id);
+
+  let index = books.indexOf(bookUpdate);
+  books.splice(index, 1);
+  res.send("The book with id " + index + " is deleted");
+});
 app.listen(3000, () => {
   console.log("Running on port 3000");
 });
