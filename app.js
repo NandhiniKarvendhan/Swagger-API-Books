@@ -32,6 +32,16 @@ let books = [
     title: "Revolutionaries : The Other Story of How India Won Its Freedom",
     author: "Sanjeev Sanyal",
   },
+  {
+    id: 2,
+    title: "Eloquent JavaScript",
+    author: "Marijn Haverbeke",
+  },
+  {
+    id: 3,
+    title: "Node.js Web Development",
+    author: "David Herron",
+  },
 ];
 
 app.get("/", (req, res) => {
