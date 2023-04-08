@@ -4,10 +4,10 @@ In this, we're going to use Swagger to document and Express web server’s APIs 
 
 ## How to use
 
-Download or clone the repository.
-Run npm install in the terminal.
-Run nodemon app.js.
-http://localhost:3000/api-docs/
+1. Download or clone the repository.
+2. Run npm install in the terminal.
+3. Run nodemon app.js.
+4. http://localhost:3000/api-docs/
 
 ## LICENSE
 
